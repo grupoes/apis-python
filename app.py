@@ -19,6 +19,10 @@ def es_decimal_real(s):
 def convertir_a_float(s):
     return float(s.replace(',', '').replace('S/', '').replace('$', '').strip())
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 @app.route("/extraer-datos", methods=["POST"])
 def extraer_datos():
     if 'archivo' not in request.files:
